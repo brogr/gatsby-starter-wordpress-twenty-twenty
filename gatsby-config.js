@@ -10,10 +10,9 @@ require("dotenv").config({
 module.exports = {
   pathPrefix: "/blog",
   siteMetadata: {
-    title: `Creative Tech Blog`,
-    description: `Gatsby Theme for Creative Tech Blog powered by headless WordPress JAM stack.`,
-    author: `@louiechristie`,
-    monetization: `$ilp.gatehub.net/484331722`
+    title: `Gatsby WordPress Twenty Twenty`,
+    description: `Gatsby starter site for WordPress Twenty Twenty Theme, based on starter by @henrikwirth, and forks by @louiechristie & @avidsapp`,
+    author: `@henrikwirth, @louiechristie, @avidsapp, @brogr`,
   },
   plugins: [
     `gatsby-plugin-notifications`,
@@ -29,7 +28,6 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        pathPrefix: "/blog",
         url: process.env.WPGRAPHQL_URL,
         verbose: true,
         develop: {
