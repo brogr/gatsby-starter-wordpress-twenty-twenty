@@ -40,16 +40,6 @@ module.exports = {
             writeQueriesToDisk: true,
           },
         },
-        plugins: [
-          {
-            resolve: `gatsby-wordpress-experimental-inline-images`,
-            options: {
-              pathPrefix: "/blog",
-              baseUrl: process.env.WP_BASE_URL,
-              protocol: `http`,
-            },
-          },
-        ],
         html: {
           fallbackImageMaxWidth: 800,
         },
