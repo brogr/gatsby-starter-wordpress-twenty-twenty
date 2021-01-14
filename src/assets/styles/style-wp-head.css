@@ -7,7 +7,7 @@
   overflow-y: scroll;
 }
 
-/* ---- WordPress fixes for styling that comes from php ---- */
+/* ---- WordPress fixes for styling that comes from php & is printed in HTML head ---- */
 
 #GatsbyBody:not(.overlay-header) .primary-menu > li > a,
 body:not(.overlay-header) .primary-menu > li > .icon,
