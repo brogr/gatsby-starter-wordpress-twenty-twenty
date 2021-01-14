@@ -47,16 +47,6 @@ with others.
 
 ----------------------------------------------------------------------------- */
 
-/* -------------------------------------------------------------------------- */
-
-/*	-1. Color variables
-/* -------------------------------------------------------------------------- */
-:root {
-  --main-bg-color: #fff;
-  --header-bg-color: #000;
-  --header-font-color: #fff;
-  --accent-color: #e02828;
-}
 
 /* -------------------------------------------------------------------------- */
 
@@ -134,20 +124,19 @@ html {
 body {
   background: var(--main-bg-color);
   box-sizing: border-box;
-  color: #000;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  color: var(--primary-color);
+  font-family: var(--body-font);
   font-size: 1.8rem;
   letter-spacing: -0.015em;
   text-align: left;
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   body {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
+} */
 
 *,
 *::before,
@@ -243,11 +232,11 @@ path {
 /*
  * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
  * This results in a jumping cursor when typing in both the classic editor and
- * block editor. The following font-face override fixes the issue by manually
+ * block editor. The following font override fixes the issue by manually
  * inserting a custom font that includes just a Hoefler Text space replacement
  * for that character instead.
  */
-@font-face {
+@font {
   font-family: NonBreakingSpaceOverride;
   src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMoAA0AAAAACDQAAALTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACCahEICjx3CywAATYCJANUBCAFhiEHgWwbXQfILgpsY+rQRRARwyAs6uL7pxzYhxEE+32b3aeHmifR6tklkS9hiZA0ewkqGRJE+H7/+6378ASViK/PGeavqJyOzsceKi1s3BCiQsiOdn1r/RBgIJYEgCUhbm/8/8/h4saPssnTNkkiWUBrTRtjmQSajw3Ui3pZ3LYDPD+XG2C3JA/yKAS8/rU5eNfuGqRf4eNNgV4YAlIIgxglEkWe6FYpq10+wi3g+/nUgvgPFczNrz/RsTgVm/zfbPuHZlsuQECxuyqBcQwKFBjFgKO8AqP4bAN9tFJtnM9xPcbNjeXS/x1wY/xU52f5W/X1+9cnH4YwKIaoRRAkUkj/YlAAeF/624foiIDBgBmgQBeGAyhBljUPZUm/l2dTvmpqcBDUOHdbPZWd8JsBAsGr4w8/EDn82/bUPx4eh0YNrQTBuHO2FjQEAGBwK0DeI37DpQVqdERS4gZBhpeUhWCfLFz7J99aEBgsJCHvUGAdAPp4IADDCAPCEFMGpMZ9AQpTfQtQGhLbGVBZFV8BaqNyP68oTZgHNj3M8kBPfXTTC9t90UuzYhy9ciH0grVlOcqyCytisvbsERsEYztiznR0WCrmTksJwbSNK6fd1Rvr25I9oLvctUoEbNOmXJbqgYgPXEHJ82IUsrCnpkxh23F1rfZ2zcRnJYoXtauB3VTFkFXQg3uoZYD5qE0kdjDtoDoF1h2bulGmev5HbYhbrjtohQSRI4aNOkffIcT+d3v6atpaYh3JvPoQsztCcqvaBkppDSPcQ3bw3KaCBo1f5CJWTZEgW3LjLofYg51MaVezrx8xZitYbQ9KYeoRaqQdVLwSEfrKXLK1otCWOKNdR/YwYAfon5Yk8O2MJfSD10dPGA5PIJJQMkah0ugMJiv6x4Dm7LEa8xnrRGGGLAg4sAlbsA07sAt76DOsXKO3hIjtIlpnnFrt1qW4kh6NhS83P/6HB/fl1SMAAA==)
       format("woff2"),
@@ -263,7 +252,7 @@ Inter variable font. Usage:
 }
 ---------------------------------------------- */
 
-@font-face {
+@font {
   font-family: "Inter var";
   font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
   font-style: normal;
@@ -271,7 +260,7 @@ Inter variable font. Usage:
   src: url(../fonts/inter/Inter-upright-var.woff2) format("woff2");
 }
 
-@font-face {
+@font {
   font-family: "Inter var";
   font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
   font-style: italic;
@@ -413,7 +402,7 @@ address {
 hr {
   border-style: solid;
   border-width: 0.1rem 0 0 0;
-  border-color: #dcd7ca;
+  border-color: var(--subtle-bg-color);
   margin: 4rem 0;
 }
 
@@ -435,7 +424,7 @@ hr.styled-separator {
 
 .entry-content hr:not(.has-background),
 hr.styled-separator {
-  color: #6d6d6d;
+  color: var(--secondary-color);
 }
 
 .entry-content hr::before,
@@ -558,7 +547,7 @@ blockquote {
 }
 
 cite {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
@@ -593,7 +582,7 @@ samp {
 }
 
 pre {
-  border: 0.1rem solid #dcd7ca;
+  border: 0.1rem solid var(--subtle-bg-color);
   line-height: 1.5;
   margin: 4rem 0;
   overflow: auto;
@@ -633,7 +622,7 @@ object {
 
 figcaption,
 .wp-caption-text {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   display: block;
   font-size: 1.5rem;
   font-weight: 500;
@@ -674,7 +663,7 @@ iframe.instagram-media {
 /* Inputs ------------------------------------ */
 
 fieldset {
-  border: 0.2rem solid #dcd7ca;
+  border: 0.2rem solid var(--subtle-bg-color);
   padding: 2rem;
 }
 
@@ -708,11 +697,11 @@ input[type="checkbox"] {
   width: 1.5rem;
   min-width: 1.5rem;
   height: 1.5rem;
-  background: #fff;
+  background: var(--white-color);
   border-radius: 0;
   border-style: solid;
   border-width: 0.1rem;
-  border-color: #dcd7ca;
+  border-color: var(--subtle-bg-color);
   box-shadow: none;
   cursor: pointer;
 }
@@ -734,12 +723,11 @@ button,
 .faux-button,
 .wp-block-button__link,
 .wp-block-file__button {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: var(--body-font);
   line-height: 1;
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   input,
   textarea,
   button,
@@ -751,12 +739,12 @@ button,
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
+} */
 
 input,
 textarea {
-  border-color: #dcd7ca;
-  color: #000;
+  border-color: var(--subtle-bg-color);
+  color: var(--primary-color);
 }
 
 code,
@@ -784,7 +772,7 @@ input[type="color"],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #fff;
+  background: var(--white-color);
   border-radius: 0;
   border-style: solid;
   border-width: 0.1rem;
@@ -840,7 +828,7 @@ input[type="submit"] {
   background: var(--accent-color);
   border: none;
   border-radius: 0;
-  color: #fff;
+  color: var(--white-color);
   cursor: pointer;
   display: inline-block;
   font-size: 1.5rem;
@@ -901,7 +889,7 @@ input[type="search"]:focus {
 /* Tables ------------------------------------ */
 
 table {
-  border: 0.1rem solid #dcd7ca;
+  border: 0.1rem solid var(--subtle-bg-color);
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
@@ -922,7 +910,7 @@ table {
 
 th,
 td {
-  border: 0.1rem solid #dcd7ca;
+  border: 0.1rem solid var(--subtle-bg-color);
   line-height: 1.4;
   margin: 0;
   overflow: visible;
@@ -930,7 +918,7 @@ td {
 }
 
 caption {
-  background: #dcd7ca;
+  background: var(--subtle-bg-color);
   font-weight: 600;
   padding: 0.5em;
   text-align: center;
@@ -1297,7 +1285,7 @@ ul.social-icons li {
   align-items: center;
   background: var(--accent-color);
   border-radius: 50%;
-  color: #fff;
+  color: var(--white-color);
   display: flex;
   height: 4.4rem;
   justify-content: center;
@@ -1392,7 +1380,7 @@ ul.social-icons li {
 
 .site-description {
   margin-top: 1rem;
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.8rem;
   font-weight: 500;
   display: none;
@@ -1432,7 +1420,7 @@ ul.social-icons li {
 }
 
 .overlay-header .header-inner {
-  color: #fff;
+  color: var(--white-color);
 }
 
 .overlay-header .site-description,
@@ -1497,7 +1485,7 @@ ul.social-icons li {
 }
 
 .toggle-inner .toggle-text {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1rem;
   font-weight: 600;
   position: absolute;
@@ -1647,9 +1635,9 @@ ul.primary-menu {
 /* SUB MENU */
 
 .primary-menu ul {
-  background: #000;
+  background: var(--primary-color);
   border-radius: 0.4rem;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.7rem;
   opacity: 0;
   padding: 1rem 0;
@@ -1687,7 +1675,7 @@ ul.primary-menu {
 
 .primary-menu ul::after {
   border: 0.8rem solid transparent;
-  border-bottom-color: #000;
+  border-bottom-color: var(--primary-color);
   right: 1.8rem;
 }
 
@@ -1736,7 +1724,7 @@ ul.primary-menu {
   border-bottom-color: transparent;
 
   /*rtl:ignore*/
-  border-left-color: #000;
+  border-left-color: var(--primary-color);
   bottom: auto;
   right: -1.6rem;
   top: 2rem;
@@ -1782,7 +1770,7 @@ ul.primary-menu {
 /* -------------------------------------------------------------------------- */
 
 .menu-modal {
-  background: #fff;
+  background: var(--header-bg-color);
   display: none;
   opacity: 0;
   overflow-y: auto;
@@ -1818,7 +1806,7 @@ ul.primary-menu {
 }
 
 .menu-modal-inner {
-  background: #fff;
+  background: var(--header-bg-color);
   display: flex;
   justify-content: stretch;
   overflow: auto;
@@ -1865,7 +1853,7 @@ button.close-nav-toggle .toggle-text {
 }
 
 .modal-menu li {
-  border-color: #dedfdf;
+  border-color: var(--border-color);
   border-style: solid;
   border-width: 0.1rem 0 0 0;
   display: flex;
@@ -1907,7 +1895,7 @@ button.close-nav-toggle .toggle-text {
 }
 
 button.sub-menu-toggle {
-  border-left: 0.1rem solid #dedfdf;
+  border-left: 0.1rem solid var(--border-color);
   flex-shrink: 0;
   margin: 1rem 0;
   padding: 0 2.5rem;
@@ -2073,7 +2061,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .search-modal-inner {
-  background: #fff;
+  background: var(--header-bg-color);
   transform: translateY(-100%);
   transition: transform 0.15s linear, box-shadow 0.15s linear;
 }
@@ -2215,7 +2203,7 @@ button.search-untoggle {
 }
 
 .cover-header .entry-header * {
-  color: #fff;
+  color: var(--white-color);
 }
 
 #GatsbyBody.template-cover .entry-header {
@@ -2373,7 +2361,7 @@ button.search-untoggle {
 /* Archive Header ---------------------------- */
 
 .archive-header {
-  background-color: #fff;
+  background-color: var(--header-bg-color);
   padding: 4rem 0;
 }
 
@@ -2412,7 +2400,7 @@ button.search-untoggle {
 /* Post Header ------------------------------- */
 
 .singular .entry-header {
-  background-color: #fff;
+  background-color: var(--header-bg-color);
   padding: 4rem 0;
 }
 
@@ -2483,7 +2471,7 @@ h2.entry-title {
 }
 
 .post-meta {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   display: flex;
   flex-wrap: wrap;
   font-size: 1.5rem;
@@ -2581,7 +2569,7 @@ h2.entry-title {
 }
 
 .singular .featured-media::before {
-  background: #fff;
+  background: var(--header-bg-color);
   content: "";
   display: block;
   position: absolute;
@@ -2752,34 +2740,34 @@ h2.entry-title {
 
 :root .has-accent-background-color {
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--white-color);
 }
 
 :root .has-primary-color {
-  color: #000;
+  color: var(--primary-color);
 }
 
 :root .has-primary-background-color {
-  background-color: #000;
+  background-color: var(--primary-color);
   color: var(--main-bg-color);
 }
 
 :root .has-secondary-color {
-  color: #6d6d6d;
+  color: var(--secondary-color);
 }
 
 :root .has-secondary-background-color {
-  background-color: #6d6d6d;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
 }
 
 :root .has-subtle-background-color {
-  color: #dcd7ca;
+  color: var(--subtle-bg-color);
 }
 
 :root .has-subtle-background-background-color {
-  background-color: #dcd7ca;
-  color: #000;
+  background-color: var(--subtle-bg-color);
+  color: var(--primary-color);
 }
 
 :root .has-background-color {
@@ -2788,7 +2776,7 @@ h2.entry-title {
 
 :root .has-background-background-color {
   background-color: var(--main-bg-color);
-  color: #000;
+  color: var(--primary-color);
 }
 
 /* Block Typography Classes ------------------ */
@@ -2808,8 +2796,7 @@ h2.entry-title {
 
 .has-drop-cap:not(:focus)::first-letter {
   color: var(--accent-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: var(--body-font);
   font-size: 5.1em;
   font-weight: 800;
   margin: 0.05em 0.1em 0 0;
@@ -2836,11 +2823,10 @@ h2.entry-title {
 .entry-content .wp-block-pullquote,
 .entry-content .wp-block-quote.is-large,
 .entry-content .wp-block-quote.is-style-large {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: var(--body-font);
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   .has-drop-cap:not(:focus)::first-letter,
   .entry-content .wp-block-archives,
   .entry-content .wp-block-categories,
@@ -2851,7 +2837,7 @@ h2.entry-title {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
+} */
 
 /* Block Font Sizes -------------------------- */
 
@@ -2964,7 +2950,7 @@ h2.entry-title {
 .entry-content .wp-block-archives li,
 .entry-content .wp-block-categories li,
 .entry-content .wp-block-latest-posts li {
-  color: #6d6d6d;
+  color: var(--secondary-color);
 }
 
 .wp-block-archives a,
@@ -2995,7 +2981,7 @@ h2.entry-title {
 
 .wp-block-latest-comments__comment-date,
 .wp-block-latest-posts__post-date {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 0.7em;
   font-weight: 600;
   letter-spacing: normal;
@@ -3006,7 +2992,7 @@ h2.entry-title {
 
 .wp-block-embed figcaption,
 .wp-block-image figcaption {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.4rem;
   margin-bottom: 0;
   margin-top: 1.5rem;
@@ -3210,7 +3196,7 @@ figure.wp-block-gallery.alignfull {
 }
 
 .wp-block-pullquote::before {
-  background: #fff;
+  background: var(--white-color);
   border-radius: 50%;
   color: var(--accent-color);
   content: "”";
@@ -3249,7 +3235,7 @@ figure.wp-block-gallery.alignfull {
 }
 
 .wp-block-pullquote cite {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.6rem;
   font-weight: 500;
   margin-top: 1.2rem;
@@ -3354,7 +3340,7 @@ hr.wp-block-separator {
 /* Block: Table ------------------------------ */
 
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background: #dcd7ca;
+  background: var(--subtle-bg-color);
 }
 
 figure.wp-block-table.is-style-stripes {
@@ -3453,7 +3439,7 @@ figure.wp-block-table.is-style-stripes {
 /* Block: Widget Latest Posts ---------------- */
 
 .wp-block-latest-posts.is-grid li {
-  border-top: 0.2rem solid #dcd7ca;
+  border-top: 0.2rem solid var(--subtle-bg-color);
   margin-top: 2rem;
   padding-top: 1rem;
 }
@@ -3531,8 +3517,7 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-  font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: var(--content-font);
   letter-spacing: normal;
 }
 
@@ -3548,11 +3533,10 @@ figure.wp-block-table.is-style-stripes {
 .entry-content address,
 .entry-content .wp-caption-text,
 .entry-content .wp-block-file {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: var(--body-font);
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   .entry-content h1,
   .entry-content h2,
   .entry-content h3,
@@ -3568,7 +3552,7 @@ figure.wp-block-table.is-style-stripes {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
+} */
 
 /* Alignment Classes ------------------------- */
 
@@ -3786,7 +3770,7 @@ div.comment:first-of-type {
 }
 
 .comment-metadata {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.4rem;
   font-weight: 500;
   margin-top: 0.6rem;
@@ -3839,7 +3823,7 @@ div.comment:first-of-type {
 
 .comment-reply-link {
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--white-color);
   display: block;
   padding: 0.7rem;
 }
@@ -3912,7 +3896,7 @@ div.comment:first-of-type {
 
 .comment-respond .comment-notes,
 .comment-respond .logged-in-as {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   font-size: 1.6rem;
   line-height: 1.4;
   margin: -3rem 0 4rem 0;
@@ -4048,7 +4032,7 @@ div.comment:first-of-type {
 
 .pagination .dots {
   transform: translateY(-0.3em);
-  color: #6d6d6d;
+  color: var(--secondary-color);
 }
 
 .nav-short {
@@ -4112,16 +4096,16 @@ div.comment:first-of-type {
 
 .widget table,
 .widget table * {
-  border-color: #dedfdf;
+  border-color: var(--border-color);
 }
 
 .widget table caption {
-  background-color: #dedfdf;
+  background-color: var(--border-color);
 }
 
 .widget .post-date,
 .widget .rss-date {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   display: block;
   font-size: 0.85em;
   font-weight: 500;
@@ -4140,26 +4124,24 @@ div.comment:first-of-type {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-  font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: var(--content-font);
   letter-spacing: normal;
 }
 
 .widget-content cite,
 .widget-content figcaption,
 .widget-content .wp-caption-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: var(--body-font);
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   .widget-content cite,
   .widget-content figcaption,
   .widget-content .wp-caption-text {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
+} */
 
 /* Base List Widget -------------------------- */
 
@@ -4180,7 +4162,7 @@ div.comment:first-of-type {
 .widget_pages li,
 .widget_meta li,
 .widget_nav_menu li {
-  color: #6d6d6d;
+  color: var(--secondary-color);
   margin: 0.3rem 0;
 }
 
@@ -4337,7 +4319,7 @@ div.comment:first-of-type {
 /* Widget: Search ---------------------------- */
 
 .widget_search .search-field {
-  border-color: #dedfdf;
+  border-color: var(--border-color);
 }
 
 /* Widget: Tag Cloud ------------------------- */
@@ -4363,8 +4345,8 @@ div.comment:first-of-type {
 
 .footer-nav-widgets-wrapper,
 #site-footer {
-  background-color: #fff;
-  border-color: #dedfdf;
+  background-color: var(--header-bg-color);
+  border-color: var(--border-color);
   border-style: solid;
   border-width: 0;
 }
@@ -4389,7 +4371,7 @@ div.comment:first-of-type {
 
 .footer-top {
   display: flex;
-  border-bottom: 0.1rem solid #dedfdf;
+  border-bottom: 0.1rem solid var(--border-color);
   justify-content: space-between;
 }
 
@@ -4455,7 +4437,7 @@ ul.footer-social li {
 /* Footer Widgets ---------------------------- */
 
 .footer-widgets-outer-wrapper {
-  border-bottom: 0.1rem solid #dedfdf;
+  border-bottom: 0.1rem solid var(--border-color);
 }
 
 .footer-widgets + .footer-widgets {
@@ -4490,7 +4472,7 @@ ul.footer-social li {
 
 .powered-by-wordpress,
 .to-the-top {
-  color: #6d6d6d;
+  color: var(--secondary-color);
 }
 
 a.to-the-top > * {
@@ -5771,7 +5753,7 @@ a.to-the-top > * {
   }
 
   .header-inner .toggle-wrapper::before {
-    background: #dedfdf;
+    background: var(--border-color);
     content: "";
     display: block;
     height: 2.7rem;

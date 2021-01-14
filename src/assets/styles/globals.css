@@ -1,0 +1,22 @@
+:root {
+  /* COLORS */
+  --black-color: #000;
+  --white-color: #fff;
+  --accent-color: #e02828;
+  --primary-color: var(--black-color);
+  --secondary-color: #6d6d6d;
+  --main-bg-color: #f5efe0;
+  --header-bg-color: var(--white-color);
+  --header-font-color: var(--primary-color);
+  --subtle-bg-color: #dcd7ca;
+  --border-color: #dedfdf;
+
+  /* TYPOGRAPHY */
+  --body-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  --content-font: NonBreakingSpaceOverride, "Hoefler Text", Garamond,
+    "Times New Roman", serif;
+
+  @supports (font-variation-settings: normal) {
+    --body-font: "Inter var", var(--body-font);
+  }
+}
