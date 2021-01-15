@@ -1,12 +1,12 @@
 {
-  "name": "creative-tech-blog",
-  "description": "Creative Tech Blog",
+  "name": "gatsby-starter-wordpress-twenty-twenty",
+  "description": "Gatsby port of the WordPress Twenty Twenty theme",
   "license": "SEE LICENSE IN <LICENSE>",
-  "private": true,
-  "version": "0.0.2",
+  "private": false,
+  "version": "0.0.3",
   "author": {
-    "name": "Louie Christie",
-    "url": "https://www.louiechristie.com"
+    "name": "Brogramming",
+    "email": "mail@brogramming.com"
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -32,7 +32,6 @@
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-source-wordpress-experimental": "^7.0.0",
     "gatsby-transformer-sharp": "^2.10.1",
-    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

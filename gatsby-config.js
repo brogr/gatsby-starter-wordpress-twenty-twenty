@@ -82,7 +82,7 @@ module.exports = {
         theme_color: `#000000`,
         display: `browser`,
         theme_color_in_head: false, // This will avoid adding theme-color meta tag.
-        // icon: `src/assets/images/icon.jpg`,
+        icon: `src/assets/images/favicon.ico`,
         include_favicon: false, // This will exclude favicon link tag
         legacy: false, // this will not add apple-touch-icon links to <head>
       },

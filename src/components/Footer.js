@@ -1,19 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
-import moment from "moment"
 
 const Footer = ({}) => {
   return (
     <footer id="site-footer" role="contentinfo" className="header-footer-group">
       <div className="section-inner">
         <div className="footer-credits">
-          <p className="footer-copyright">© {moment().format("YYYY")} </p>
+          <p className="footer-copyright">
+            © {new Date().getFullYear()}{" "}
+            <Link to={"/"}>Gatsby Starter WordPress Twenty Twenty</Link>
+          </p>
           <p>
             <a
               className="powered-by-wordpress"
-              href="https://www.louiechristie.com"
+              href="https://www.gatsbyjs.com/guides/wordpress/"
+              rel="noreferrer noopener"
             >
-              By Louie Christie
+              Powered by Gatsby & WordPress
             </a>
           </p>
         </div>

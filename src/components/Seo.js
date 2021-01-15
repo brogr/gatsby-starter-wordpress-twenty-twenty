@@ -10,7 +10,6 @@ const detailsQuery = graphql`
         title
         description
         author
-        monetization
       }
     }
     wp {
@@ -36,8 +35,6 @@ function Seo({ description, lang, meta, keywords, title }) {
               data.site.siteMetadata.title
             }`
           : data.wp.generalSettings.description || data.site.siteMetadata.title
-        const monetization =
-          data.site.siteMetadata.monetization
         return (
           <Helmet
             htmlAttributes={{
@@ -77,10 +74,6 @@ function Seo({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:description`,
                 content: metaDescription,
-              },
-              {
-                name: `monetization`,
-                content: monetization,
               },
             ]
               .concat(
