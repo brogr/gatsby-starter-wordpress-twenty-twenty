@@ -2,7 +2,7 @@
 
 A port of the WordPress Twenty Twenty theme to Gatsby.
 
-Based on [@henrikwirth's Gatsby Starter Wordpress Twenty Twenty Theme](https://github.com/henrikwirth/gatsby-starter-wordpress-twenty-twenty), [@louiechristie's contribution](https://github.com/louiechristie/blog), and with some inspiration from [@avidsapp's tweaks](https://github.com/avidsapp/gatsby-wordpress-2020).
+Based on [@louiechristie's fork](https://github.com/louiechristie/blog) of [@henrikwirth's Gatsby Starter Wordpress Twenty Twenty Theme](https://github.com/henrikwirth/gatsby-starter-wordpress-twenty-twenty), and with some inspiration from [@avidsapp's tweaks](https://github.com/avidsapp/gatsby-wordpress-2020).
 
 **Works pretty well but still a work in progress**
 
@@ -47,9 +47,9 @@ It will build the site and deploy it to the gh-pages branch on Github.
 
 ## Links
 
-- [gatsby-starter-wordpress-twenty-twenty](https://github.com/henrikwirth/gatsby-starter-wordpress-twenty-twenty)
-  - [blog](https://github.com/louiechristie/blog)
-  - [gatsby-wordpress-2020](https://github.com/avidsapp/gatsby-wordpress-2020)
+- [@henrikwirth's Gatsby Starter WordPress Twenty Twenty Theme](https://github.com/henrikwirth/gatsby-starter-wordpress-twenty-twenty)
+  - [@louiechristie's fork](https://github.com/louiechristie/blog)
+  - [also see @avidsapp's fork for Footer Menus etc.](https://github.com/avidsapp/gatsby-wordpress-2020)
 - [gatsby-source-wordpress-experimental](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental)
 - [WPGatsby - WordPress Plugin](https://github.com/gatsbyjs/wp-gatsby)
 - [Twenty Twenty - WordPress Theme](https://de.wordpress.org/themes/twentytwenty/)

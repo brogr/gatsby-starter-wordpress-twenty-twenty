@@ -8,7 +8,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: "/blog",
+  // pathPrefix: "/blog",
   siteMetadata: {
     title: `Gatsby WordPress Twenty Twenty`,
     description: `Gatsby starter site for WordPress Twenty Twenty Theme, based on starter by @henrikwirth, and forks by @louiechristie & @avidsapp`,
@@ -75,13 +75,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Creative Tech Blog`,
-        short_name: `Creative Tech Blog`,
+        name: `Gatsby WordPress Twenty Twenty`,
+        short_name: `GatsbyWP-TwentyTwenty`,
         start_url: `/`,
         background_color: `#FFFFFF`,
-        theme_color: `#1e73be`,
+        theme_color: `#000000`,
         display: `browser`,
-        icon: `src/assets/images/icon.jpg`,
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
+        // icon: `src/assets/images/icon.jpg`,
+        include_favicon: false, // This will exclude favicon link tag
+        legacy: false, // this will not add apple-touch-icon links to <head>
       },
     },
     {
