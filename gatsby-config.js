@@ -8,7 +8,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  // pathPrefix: "/blog",
+  pathPrefix: "/gatsby-starter-wordpress-twenty-twenty",
   siteMetadata: {
     title: `Gatsby WordPress Twenty Twenty`,
     description: `Gatsby starter site for WordPress Twenty Twenty Theme, based on starter by @henrikwirth, and forks by @louiechristie & @avidsapp`,
